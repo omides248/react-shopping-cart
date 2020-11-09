@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {v4 as uuidv4} from 'uuid';
 import NewSongForm from "./NewSongForm";
 
+
 const SongList = () => {
     // Concept using "useState" and "useEffect"
 
@@ -20,7 +21,7 @@ const SongList = () => {
 
     useEffect(() => {
         console.log("useEffect hook ran without inputs")
-    }) // Call every time update page or refresh page or render page or re-render page
+    }) // Call every time update or refresh or render or re-render page
 
     useEffect(() => {
         console.log("useEffect hook ran", songs)
