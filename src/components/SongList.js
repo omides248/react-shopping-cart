@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {v4 as uuidv4} from 'uuid';
-import NewSongForm from "./NewSongForm";
+import SongForm from "./SongForm";
 
 
 const SongList = () => {
@@ -47,7 +47,7 @@ const SongList = () => {
                 })}
             </ul>
 
-            <NewSongForm addSong={addSong}/>
+            <SongForm addSong={addSong}/>
             <br/>
             <button onClick={() => setAge(age + 1)}>Your age is : {age}</button>
         </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const NewSongForm = ({addSong}) => {
+const SongForm = ({addSong}) => {
     const [title, setTitle] = useState("") // Initial value is empty string
 
     const handleSubmit = (e) => {
@@ -19,4 +19,4 @@ const NewSongForm = ({addSong}) => {
     )
 }
 
-export default NewSongForm
+export default SongForm
