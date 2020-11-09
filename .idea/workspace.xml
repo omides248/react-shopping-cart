@@ -1,9 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c06f3c4e-3005-401b-a55a-e71ab25547ad" name="Default Changelist" comment="Add">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/omid_esmaeili.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/BookReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/BookContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/BookContext.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1k2vCrueE5BvObJEJBUTFoC2zFy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="ls" />
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c06f3c4e-3005-401b-a55a-e71ab25547ad" name="Default Changelist" comment="" />
+      <created>1604911376003</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604911376003</updated>
+      <workItem from="1604911377508" duration="8067000" />
+      <workItem from="1604935613953" duration="6473000" />
+    </task>
+    <task id="LOCAL-00001" summary="Concept using &quot;useState&quot; and &quot;useEffect&quot;">
+      <created>1604918607475</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604918607475</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Concept using &quot;useState&quot; and &quot;useEffect&quot;">
+      <created>1604936242912</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604936242912</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add useContext&#10;- Add books&#10;- Delete books">
+      <created>1604940632256</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604940632256</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Concept using &quot;useState&quot; and &quot;useEffect&quot;" />
+    <MESSAGE value="Add useContext&#10;- Add books&#10;- Delete books" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add useContext&#10;- Add books&#10;- Delete books" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604911794972">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1604911794972" />
+    <state x="163" y="0" key="CommitChangelistDialog2" timestamp="1604942392937">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="163" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1604942392937" />
+    <state x="421" y="87" key="FileChooserDialogImpl" timestamp="1604911707277">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="87" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1604911707277" />
+    <state width="1237" height="254" key="GridCell.Tab.0.bottom" timestamp="1604919452564">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="254" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1604919452564" />
+    <state width="1237" height="254" key="GridCell.Tab.0.center" timestamp="1604919452564">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="254" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1604919452564" />
+    <state width="1237" height="254" key="GridCell.Tab.0.left" timestamp="1604919452564">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="254" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1604919452564" />
+    <state width="1237" height="254" key="GridCell.Tab.0.right" timestamp="1604919452564">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="254" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1604919452564" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1604936581390">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1604936581390" />
+    <state x="233" y="79" key="Vcs.Push.Dialog.v2" timestamp="1604940634231">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="79" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1604940634231" />
+    <state x="311" y="138" key="git4idea.merge.GitPullDialog" timestamp="1604918705622">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="311" y="138" key="git4idea.merge.GitPullDialog/0.0.1280.689@0.0.1280.689" timestamp="1604918705622" />
+    <state x="358" y="154" key="jetbrains.nodejs.interpreters-dialog" timestamp="1604911685886">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="358" y="154" key="jetbrains.nodejs.interpreters-dialog/0.0.1280.689@0.0.1280.689" timestamp="1604911685886" />
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1604911892821">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1604911892821" />
   </component>
 </project>
