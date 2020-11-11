@@ -5,6 +5,7 @@ import NavBar from "./shared/components/navbar/NavBar";
 import SignUp from "./signup/components/SignUp";
 import Login from "./login/components/Login";
 import Cart from "./cart/Cart";
+import CartContextProvider from "./contexts/CartContext";
 
 
 function App() {
@@ -12,10 +13,12 @@ function App() {
 
 
         <BrowserRouter>
+            <CartContextProvider>
             <NavBar/>
             <main>
-                <Switch>
-                    <Route path="/" exact={true}>
+
+                    <Switch>
+                        <Route path="/" exact={true}>
                             {/*<BookContextProvider>*/}
                             {/*    <SongList/>*/}
                             {/*    <Navbar/>*/}
@@ -25,20 +28,22 @@ function App() {
 
                             <ProductList/>
 
-                    </Route>
-                    <Route path="/signup" exact={true}>
-                        <SignUp/>
-                    </Route>
-                    <Route path="/login" exact={true}>
-                        <Login/>
-                    </Route>
+                        </Route>
+                        <Route path="/signup" exact={true}>
+                            <SignUp/>
+                        </Route>
+                        <Route path="/login" exact={true}>
+                            <Login/>
+                        </Route>
 
-                    <Route path="/cart" exact={true}>
-                        <Cart/>
-                    </Route>
-                    <Redirect to="/"/>
-                </Switch>
+                        <Route path="/cart" exact={true}>
+                            <Cart/>
+                        </Route>
+                        <Redirect to="/"/>
+                    </Switch>
+
             </main>
+            </CartContextProvider>
         </BrowserRouter>
 
     );
