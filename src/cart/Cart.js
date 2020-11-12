@@ -6,7 +6,7 @@ import {CartContext} from "../contexts/CartContext";
 
 function Cart(props) {
 
-    const {cartProducts, removeProductToCart, decrementProductOfCart, incrementProductToCart, totalCart} = useContext(CartContext)
+    const {cartProducts, removeProductToCart, decrementProductOfCart, incrementProductToCart} = useContext(CartContext)
     return (
         <div className="div-table">
             <table className="table-cart">
@@ -23,7 +23,7 @@ function Cart(props) {
                 </thead>
 
                 <tbody>
-                { cartProducts && cartProducts.map(product => {
+                { cartProducts.items && cartProducts.items.map(product => {
                     return (
                         <tr key={product.id}>
                             <td className="td-remove-tag-right"><FontAwesomeIcon icon={faTrash} className="trash-icon-cart" onClick={() => removeProductToCart(product.id)}/></td>
@@ -42,7 +42,7 @@ function Cart(props) {
                     <td/>
                     <td/>
                     <td/>
-                    <td className="td-remove-tag-left">{totalCart}</td>
+                    <td className="td-remove-tag-left">{cartProducts.total}</td>
 
                 </tr>
                 </tbody>

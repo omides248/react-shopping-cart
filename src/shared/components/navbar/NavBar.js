@@ -7,7 +7,7 @@ import {CartContext} from "../../../contexts/CartContext";
 
 
 function NavBar() {
-    const {countProducts} = useContext(CartContext)
+    const {cartProducts} = useContext(CartContext)
 
     // const {count, setCount} = useState(0)
 
@@ -18,12 +18,16 @@ function NavBar() {
     //     setCount(count + 1)
     // }
 
+    useEffect(() => {
+
+    })
+
     return (
         <div className="navbar">
             <Link to="/">خانه</Link>
             <Link to="/login">ورود</Link>
             <Link to="/signup">ثبت نام</Link>
-            <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> {countProducts} </Link>
+            <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> {cartProducts.count} </Link>
             <Link to="/about-us">رتباط با ما</Link>
         </div>
     );

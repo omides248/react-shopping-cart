@@ -5,92 +5,164 @@ export const CartContext = createContext()
 
 const CartContextProvider = (props) => {
 
-    const [cartProducts, setProductsToCart] = useState([])
-    const [countProducts, setCountProducts] = useState(0)
-    const [totalCart, setTotalCart] = useState(0)
+    const [cartProducts, setProductsToCart] = useState(() => {
+        const localData = localStorage.getItem("cart")
+        return localData ? JSON.parse(localData) : {total: 0, count: 0, items: []}
+    })
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cartProducts))
+        console.log("update carts", cartProducts)
+    }, [cartProducts]) // Every time change books set All books to localStorage
 
 
     const addProductToCart = (id, title, quantity, price) => {
+
         let is_found_product = false
-        console.log("cartProducts:", cartProducts.length, cartProducts)
-        if (cartProducts.length === 0) {
-            setProductsToCart([...cartProducts, {id, title, quantity, price, total: price}])
-            console.log("c1 first")
-            is_found_product = true
-            setCountProducts(countProducts + 1)
-            setTotalCart(price)
-        } else {
-            for (let i in cartProducts) {
-                console.log("Before : ", id, title, i)
-                if (cartProducts[i].id === id) {
-                    cartProducts[i].quantity += 1
-                    cartProducts[i].total += price
-                    setProductsToCart(cartProducts)
-                    setCountProducts(countProducts + 1)
-                    setTotalCart(totalCart + cartProducts[i].price)
-                    console.log("c2 exists")
-                    is_found_product = true
-                    break
+
+        if (cartProducts.items) {
+            if (cartProducts.items.length === 0) {
+
+                setProductsToCart({
+                    total: price,
+                    count: 1,
+                    items: [...cartProducts.items, {id, title, quantity, price, total: price}]
+                })
+
+                is_found_product = true
+
+            } else {
+
+                for (let i = 0; i < cartProducts.items.length; i++) {
+                    // console.log("Before : ", id, title, i)
+                    if (cartProducts.items[i].id === id) {
+
+                        // Update items filed in cart
+                        cartProducts.items[i].quantity += 1
+                        cartProducts.items[i].total += price
+
+                        // Update cart common field
+                        cartProducts.total += price
+                        cartProducts.count += 1
+
+                        // Replace new cart for refresh page
+                        setProductsToCart({
+                            total: cartProducts.total,
+                            count: cartProducts.count,
+                            items: [...cartProducts.items]
+                        })
+
+                        is_found_product = true
+                        break
+                    }
                 }
             }
         }
 
-        if (!is_found_product) {
-            setProductsToCart([...cartProducts, {id, title, quantity, price, total: price}])
-            setCountProducts(countProducts + 1)
-            setTotalCart(totalCart + price)
-            console.log("c3 new ")
-        }
 
-        console.log("After : ", id, title)
-        console.log(cartProducts)
+        if (!is_found_product) {
+
+            let count = cartProducts.count + 1
+
+            // Replace new cart for refresh page
+            setProductsToCart({
+                total: cartProducts.total + price,
+                count: count,
+                items: [...cartProducts.items, {id, title, quantity, price, total: price}]
+            })
+
+        }
     }
 
     const removeProductToCart = (id) => {
-        let q = 0
-        let t = 0
-        for (let i in cartProducts) {
-            if (cartProducts[i].id === id) {
-                q = cartProducts[i].quantity
-                t = cartProducts[i].price * q
+
+        for (let i = 0; i < cartProducts.items.length; i++) {
+            if (cartProducts.items[i].id === id) {
+
+                // Update cart common field
+                cartProducts.total -= cartProducts.items[i].price * cartProducts.items[i].quantity
+                cartProducts.count -= cartProducts.items[i].quantity
+
+                // Remove item i of cart
+                cartProducts.items.splice(i, 1)
+
+                // Replace new cart for refresh page
+                setProductsToCart({
+                    total: cartProducts.total,
+                    count: cartProducts.count,
+                    items: [...cartProducts.items]
+                })
+
                 break
             }
         }
-        setProductsToCart(cartProducts.filter(product => product.id !== id))
-        setCountProducts(countProducts - q)
-        setTotalCart(totalCart - t)
+
+
     }
 
     const incrementProductToCart = (id) => {
-        console.log("1Before : ", cartProducts)
-        for (let i in cartProducts) {
-            if (cartProducts[i].id === id) {
-                cartProducts[i].quantity += 1;
-                cartProducts[i].total += cartProducts[i].price;
-                setProductsToCart(cartProducts)
-                setCountProducts(countProducts + 1)
-                setTotalCart(totalCart + cartProducts[i].price)
+
+        for (let i = 0; i < cartProducts.items.length; i++) {
+            if (cartProducts.items[i].id === id) {
+
+                // Update items filed in cart
+                cartProducts.items[i].quantity += 1;
+                cartProducts.items[i].total += cartProducts.items[i].price;
+
+                // Update cart common field
+                cartProducts.total += cartProducts.items[i].price
+                cartProducts.count += 1
+
+                // Replace new cart for refresh page
+                setProductsToCart({
+                    total: cartProducts.total,
+                    count: cartProducts.count,
+                    items: [...cartProducts.items]
+                })
+
                 break
             }
         }
-        console.log("1After : ", cartProducts)
     }
 
     const decrementProductOfCart = (id) => {
-        for (let i in cartProducts) {
-            if (cartProducts[i].id === id) {
-                let old_quantity = cartProducts[i].quantity;
+        for (let i = 0; i < cartProducts.items.length; i++) {
+            if (cartProducts.items[i].id === id) {
+
+                let old_quantity = cartProducts.items[i].quantity;
+
                 if (old_quantity > 1) {
-                    cartProducts[i].quantity -= 1;
-                    cartProducts[i].total -= cartProducts[i].price;
-                    setProductsToCart(cartProducts)
-                    setCountProducts(countProducts - 1)
-                    setTotalCart(totalCart - cartProducts[i].price)
+
+                    // Update items filed in cart
+                    cartProducts.items[i].quantity -= 1;
+                    cartProducts.items[i].total -= cartProducts.items[i].price;
+
+                    // Update cart common field
+                    cartProducts.total -= cartProducts.items[i].price
+                    cartProducts.count -= 1
+
+                    // Replace new cart for refresh page
+                    setProductsToCart({
+                        total: cartProducts.total,
+                        count: cartProducts.count,
+                        items: [...cartProducts.items]
+                    })
+
                 } else {
-                    setProductsToCart(cartProducts.filter(product => product.id !== id))
-                    setCountProducts(countProducts - 1)
-                    setTotalCart(totalCart - cartProducts[i].price)
-                    cartProducts[i].total -= cartProducts[i].price;
+
+                    // Update cart common field
+                    cartProducts.total -= cartProducts.items[i].price
+                    cartProducts.count -= 1
+
+                    // Remove item i of cart
+                    cartProducts.items.splice(i, 1)
+
+                    // Replace new cart for refresh page
+                    setProductsToCart({
+                        total: cartProducts.total,
+                        count: cartProducts.count,
+                        items: [...cartProducts.items]
+                    })
                 }
             }
         }
@@ -101,12 +173,10 @@ const CartContextProvider = (props) => {
         <CartContext.Provider
             value={{
                 cartProducts,
-                countProducts,
                 addProductToCart,
                 removeProductToCart,
                 decrementProductOfCart,
-                incrementProductToCart,
-                totalCart
+                incrementProductToCart
             }}>
             {props.children}
         </CartContext.Provider>
