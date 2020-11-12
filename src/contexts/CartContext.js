@@ -12,7 +12,6 @@ const CartContextProvider = (props) => {
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cartProducts))
-        console.log("update carts", cartProducts)
     }, [cartProducts]) // Every time change books set All books to localStorage
 
 
