@@ -7,6 +7,8 @@
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+    width: 250px;
+    height: 350px;
 }
 
 .price {
@@ -22,10 +24,8 @@
     background-color: #3cb651;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 74%;
     font-size: 18px;
-
-
 }
 
 .card button:hover {
