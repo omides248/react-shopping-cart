@@ -39,7 +39,7 @@ function ProductList() {
                             <p>{product.description ? product.description.substring(0, 10) : ""}</p>
                             <p>
                                 <button type="submit"
-                                        onClick={() => addProductToCart(product.id, product.title, 1, product.price)}>افزودن
+                                        onClick={() => addProductToCart(product.id, product.title, product.price, product.image)}>افزودن
                                     به سبد خرید
                                 </button>
                             </p>

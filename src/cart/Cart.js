@@ -27,7 +27,7 @@ function Cart(props) {
                     return (
                         <tr key={product.id}>
                             <td className="td-remove-tag-right"><FontAwesomeIcon icon={faTrash} className="trash-icon-cart" onClick={() => removeProductToCart(product.id)}/></td>
-                            <td>image<img src="" height={50} width={50} alt=""/></td>
+                            <td><img src={product.image} style={{width: "50px", height: "50px", objectFit: "contain"}} alt={product.name}/></td>
                             <td>{product.title}</td>
                             <td><FontAwesomeIcon icon={faMinus} onClick={() => decrementProductOfCart(product.id)}/> {product.quantity} <FontAwesomeIcon icon={faPlus} onClick={() => incrementProductToCart(product.id)}/></td>
                             <td>{product.price}</td>
