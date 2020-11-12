@@ -15,7 +15,7 @@ const CartContextProvider = (props) => {
     }, [cartProducts]) // Every time change books set All books to localStorage
 
 
-    const addProductToCart = (id, title, quantity, price) => {
+    const addProductToCart = (id, title, price) => {
 
         let is_found_product = false
 
@@ -25,7 +25,7 @@ const CartContextProvider = (props) => {
                 setProductsToCart({
                     total: price,
                     count: 1,
-                    items: [...cartProducts.items, {id, title, quantity, price, total: price}]
+                    items: [...cartProducts.items, {id, title, quantity: 1, price, total: price}]
                 })
 
                 is_found_product = true
@@ -67,7 +67,7 @@ const CartContextProvider = (props) => {
             setProductsToCart({
                 total: cartProducts.total + price,
                 count: count,
-                items: [...cartProducts.items, {id, title, quantity, price, total: price}]
+                items: [...cartProducts.items, {id, title, quantity: 1, price, total: price}]
             })
 
         }
