@@ -72,3 +72,11 @@ td {
     color: red;
 
 }
+
+.icon-decrement-cart:hover {
+    color: red;
+}
+
+.icon-increment-cart:hover {
+    color: #3cb651;
+}

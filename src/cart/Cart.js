@@ -28,8 +28,8 @@ function Cart(props) {
                         <tr key={product.id}>
                             <td className="td-remove-tag-right"><FontAwesomeIcon icon={faTrash} className="trash-icon-cart" onClick={() => removeProductToCart(product.id)}/></td>
                             <td><img src={product.image} style={{width: "50px", height: "50px", objectFit: "contain"}} alt={product.name}/></td>
-                            <td>{product.title}</td>
-                            <td><FontAwesomeIcon icon={faMinus} onClick={() => decrementProductOfCart(product.id)}/> {product.quantity} <FontAwesomeIcon icon={faPlus} onClick={() => incrementProductToCart(product.id)}/></td>
+                            <td>{product.name}</td>
+                            <td><FontAwesomeIcon icon={faMinus} onClick={() => decrementProductOfCart(product.id)} className="icon-decrement-cart"/> {product.quantity} <FontAwesomeIcon icon={faPlus} onClick={() => incrementProductToCart(product.id)} className="icon-increment-cart"/></td>
                             <td>{product.price}</td>
                             <td className="td-remove-tag-left">{product.total || product.price}</td>
 

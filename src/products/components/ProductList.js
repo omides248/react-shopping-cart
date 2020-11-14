@@ -4,7 +4,7 @@ import axios from 'axios'
 import host from '../../config/config'
 import './ProductList.css';
 import {CartContext} from "../../contexts/CartContext";
-import useFetch from "../../hooks/UseFetch"
+import {useFetch} from "../../hooks/UseFetch"
 
 
 function ProductList() {
@@ -39,7 +39,7 @@ function ProductList() {
                             <p>{product.description ? product.description.substring(0, 10) : ""}</p>
                             <p>
                                 <button type="submit"
-                                        onClick={() => addProductToCart(product.id, product.title, product.price, product.image)}>افزودن
+                                        onClick={() => addProductToCart(product.id, product.name, product.price, product.image)}>افزودن
                                     به سبد خرید
                                 </button>
                             </p>
